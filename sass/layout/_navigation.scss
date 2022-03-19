@@ -7,6 +7,9 @@
         justify-content: space-evenly;
         height: 70%;
     }
+    @include responsive(xs) {
+        height: 50%;
+    }
 
     &__item {
         margin: 0 35px;
