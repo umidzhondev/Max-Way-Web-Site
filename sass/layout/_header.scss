@@ -12,11 +12,6 @@
         width: 100%;
         @include flex(space-between, center, row);
 
-        @include responsive(md){
-            position: relative;
-            z-index: 30;
-        }
-
         &__main {
             @include flex(space-between, center, row);
 
@@ -24,14 +19,14 @@
                 position: fixed;
                 width: 100vw;
                 height: 100vh;
-                background-color: rgb(231, 235, 145);
+                background-color: #fff;
                 z-index: 20;
-                left: 0;
-                top: -100%;
+                top: 0;
+                left: -100%;
                 flex-direction: column;
                 padding: 20px;
                 justify-content: center;
-                transition: top .8s ease;
+                transition: left .8s ease;
             }
 
             &-items {
@@ -45,7 +40,7 @@
             }
 
             &.open {
-                top: 0;
+                left: 0;
             }
 
         }
