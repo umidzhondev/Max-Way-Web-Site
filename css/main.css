@@ -989,7 +989,7 @@ a {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: #fff;
+    background-color: #e7eb91;
     z-index: 20;
     left: 0;
     top: -100%;
@@ -1212,6 +1212,12 @@ a {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     height: 70%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav {
+    height: 50%;
   }
 }
 
