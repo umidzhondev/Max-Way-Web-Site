@@ -1,0 +1,61 @@
+// * Navigation
+.nav {
+    @include flex(center, center, row);
+
+    @include responsive(md) {
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 70%;
+    }
+
+    &__item {
+        margin: 0 35px;
+
+        @include responsive(lg) {
+            margin: 0 30px;
+        }
+
+        @include responsive(md) {
+            margin: 0;
+        }
+    }
+
+    &__link {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: $color-black;
+        cursor: pointer;
+        position: relative;
+        padding: 5px 5px 5px 0;
+
+        @include responsive(md) {
+            font-size: 26px;
+            font-weight: 600;
+        }
+        @include responsive(xxs){
+         font-size: 24px;   
+        }
+
+        &::after {
+            content: "";
+            background-color: #222;
+            height: 2px;
+            border-radius: 20px;
+            width: 0;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            @include transition(width, .5s, ease);
+        }
+
+        &:hover {
+            opacity: .8;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}

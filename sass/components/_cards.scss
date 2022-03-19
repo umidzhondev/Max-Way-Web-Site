@@ -1,0 +1,256 @@
+// * Main Cards
+.main {
+    &__cards {
+        @include flex(flex-start, center, row);
+        gap: 40px;
+
+        @include responsive(sm) {
+            gap: 25px;
+        }
+
+        @include responsive(xs) {
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    &__card {
+        @include flex(space-between, flex-start, column);
+        width: 255px;
+        height: 200px;
+        padding: 20px;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+
+        @include responsive(xs) {
+            width: 300px;
+        }
+
+        @include responsive(xxs) {
+            width: 100%;
+        }
+
+        &:nth-child(1) {
+            background: $color-yellow-gradient;
+        }
+
+        &:last-child {
+            background-color: $color-purple;
+        }
+
+        &-imgbox {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        &-button {
+            padding: 11px 23px;
+            border-radius: 13px;
+            background-color: $color-white-20;
+            @include flex(space-between, center, row);
+            @include transition(all, .3s, ease);
+            z-index: 2;
+
+            span {
+                font-size: 18px;
+            }
+
+            p {
+                color: #fff;
+                margin-left: 12px;
+                font-size: 18px;
+            }
+
+            &:hover {
+                background-color: #fff;
+
+                p,
+                span {
+                    color: $color-black;
+                }
+            }
+        }
+
+        &-body {
+            @include flex(space-between, center, row);
+        }
+
+        &:nth-child(1) &-title {
+            color: $color-orange;
+        }
+
+        &:nth-child(2) &-title {
+            color: $color-pink;
+        }
+
+        &-title {
+            @include flex(center, flex-start, column);
+            margin-left: 10px;
+
+
+            span {
+                font-weight: 700;
+                font-size: 34px;
+                line-height: 32px;
+                text-transform: uppercase;
+                color: inherit;
+
+                &:last-child {
+                    color: inherit;
+                    display: flex;
+                    justify-content: flex-end;
+                    text-align: end;
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}
+
+// * Product Cards
+.product {
+    &__cards {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+
+        @include responsive(xs) {
+            grid-template-columns: repeat(1, 1fr)
+        }
+    }
+
+    &__card {
+        @include flex(space-between, center, row);
+        padding: 30px;
+        border-radius: $border-radius-12;
+        border: 1px solid rgba(151, 151, 151, 0.181927);
+
+        @include responsive(md) {
+            flex-direction: column;
+        }
+
+        @include responsive(sm) {
+            padding: 15px;
+        }
+
+        @include responsive(xs) {
+            flex-direction: row;
+        }
+
+        @media(max-width:450px) {
+            flex-direction: column;
+        }
+
+        &-imgbox {
+            position: relative;
+            @include flex(center, center, row);
+            width: 180px;
+            height: 180px;
+
+            @include responsive(lg) {
+                width: 160px;
+                height: 160px;
+            }
+
+            @include responsive(md) {
+                margin-bottom: 20px;
+            }
+
+            @include responsive(sm) {
+                margin-bottom: 15px;
+                width: 180px;
+                height: auto;
+            }
+
+            @include responsive(xs) {
+                width: 150px;
+                margin-bottom: 0;
+            }
+            @include responsive(xxs){
+                margin-bottom: 10px;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            &__shape {
+                position: absolute;
+                top: 0;
+                left: 0;
+                @extend .card-imgbox-shape;
+                width: 50px;
+                height: 50px;
+                @include flex(center, center, row);
+                border-radius: $border-radius-circle;
+            }
+        }
+
+        &-info {
+            @include flex(center, flex-start, column);
+            color: $color-black;
+            margin-left: 40px;
+            flex: 1;
+
+            @include responsive(lg) {
+                margin-left: 10px;
+            }
+        }
+
+        &-title {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        &-description {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            opacity: .4;
+            color: $color-black;
+            margin-bottom: 24px;
+            width: 85%;
+
+            @include responsive(lg) {
+                width: 100%;
+            }
+
+            @include responsive(sm) {
+                margin-bottom: 15px;
+            }
+        }
+
+        &-footer {
+            @include flex(space-between, center, row);
+            width: 100%;
+        }
+
+        &-price {
+            font-weight: 700;
+        }
+
+        &-button {
+            width: 50px;
+            height: 50px;
+            @include flex(center, center, row);
+            color: #fff;
+            background-color: $color-yellow;
+            border-radius: $border-radius-circle;
+            font-size: 20px;
+            font-weight: 400;
+
+            @include responsive(sm) {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+    }
+}

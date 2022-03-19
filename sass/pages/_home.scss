@@ -1,0 +1,326 @@
+// * Main
+.main {
+    width: 100%;
+    padding-top: 100px;
+
+    @include responsive(md) {
+        padding-top: 30px;
+    }
+
+    &__content {
+        padding-bottom: 80px;
+        border-bottom: 1px solid #979797A2;
+        width: 100%;
+        @include flex(space-between, flex-start, row);
+        position: relative;
+
+        @include responsive(sm) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__info {
+        @include flex(center, flex-start, column);
+        flex: 1;
+        color: $color-black;
+
+        @include responsive(md) {
+            width: 50%;
+        }
+
+        @include responsive(sm) {
+            width: 100%;
+        }
+
+        @include responsive(xs) {
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        font-style: normal;
+        font-weight: 900;
+        margin-bottom: 15px;
+        color: $color-black;
+
+        @include responsive(xxs) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__description {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 32px;
+        margin-bottom: 65px;
+        width: 70%;
+
+        @include responsive(md) {
+            margin-bottom: 45px;
+            width: 100%;
+        }
+    }
+
+    &__imgbox {
+        @include flex(center, flex-start, column);
+        flex: 1;
+
+        @include responsive(md) {
+            width: 50%;
+        }
+
+        @include responsive(sm) {
+            margin: 0 auto;
+            margin-bottom: 40px;
+            width: auto;
+            height: 420px;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// * Product
+.product {
+    width: 100%;
+    padding-top: 40px;
+
+    &__content {
+        width: 100%;
+        @include flex(center, center, column);
+    }
+
+    &__nav {
+        @include flex(space-between, center, row);
+        width: 100%;
+        margin-bottom: 100px;
+
+        @include responsive(sm) {
+            margin-bottom: 50px;
+        }
+
+        @include responsive(xxs) {
+            margin-bottom: 20px;
+        }
+
+        &-links {
+            @include flex(space-between, center, row);
+
+            @include responsive(lg) {
+                overflow-x: auto;
+                padding-bottom: 25px;
+            }
+
+            @include responsive(xs) {
+                padding-bottom: 15px;
+            }
+        }
+
+        &-item {
+            margin-right: 34px;
+            border-radius: $border-radius-27;
+            background-color: transparent;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+            padding: 15px 27px;
+            color: $color-black;
+            transition: .3s ease-in-out;
+            cursor: pointer;
+
+            @include responsive(xs) {
+                margin-right: 15px;
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            &--active {
+                color: #fff;
+                background-color: $color-yellow;
+            }
+
+            &:hover {
+                color: #fff;
+                background-color: $color-yellow;
+            }
+        }
+    }
+
+    &__main {
+        width: 100%;
+        @include flex(center, center, column);
+
+        &-row {
+            width: 100%;
+            @include flex(center, flex-start, column);
+            margin-bottom: 100px;
+
+            @include responsive(xxs) {
+                margin-bottom: 40px;
+            }
+
+            h2 {
+                margin-bottom: 30px;
+                font-weight: 700;
+
+                @include responsive(xs) {
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+
+
+}
+
+// * Download
+.download {
+    width: 100%;
+    background-color: $color-purple;
+    background-image: url("/image/download/path.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+
+    @include responsive(md) {
+        background-image: none;
+        padding: 40px 0;
+        padding-bottom: 0;
+    }
+
+    &__content {
+        width: 100%;
+        @include flex(space-between, center, row);
+
+        @include responsive(md) {
+            flex-direction: column;
+        }
+    }
+
+    &__info {
+        @include flex(center, flex-start, column);
+        color: #fff;
+        flex: 1;
+    }
+
+    &__title {
+        margin-bottom: 63px;
+        line-height: 70px;
+
+        @include responsive(lg) {
+            font-size: 45px;
+            line-height: 65px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: 45px;
+        }
+
+        @include responsive(xs) {
+            font-size: 34px;
+            line-height: 45px;
+            font-weight: 600;
+        }
+
+        @include responsive(xxs) {
+            font-size: 32px;
+            line-height: 42px;
+        }
+    }
+
+    &__apps {
+        @include flex(space-between, center, row);
+        gap: 30px;
+
+        @media(max-width:1080px) {
+            width: 120%;
+        }
+
+        @include responsive(md) {
+            width: auto;
+        }
+
+        @include responsive(sm) {
+            gap: 25px;
+        }
+
+        @include responsive(xs) {
+            flex-direction: column;
+        }
+    }
+
+    &__app {
+        padding: 16px 30px;
+        border-radius: 46px;
+        gap: 20px;
+        border: 2px solid $color-white-20;
+        @include flex(space-between, center, row);
+        color: #fff;
+        transition: border 300ms;
+        cursor: pointer;
+
+        span {
+            font-size: 24px;
+        }
+
+        &:hover {
+            border: 2px solid #fff;
+        }
+
+        @include responsive(lg) {
+            padding: 16px 24px;
+        }
+
+        @include responsive(sm) {
+            padding: 14px 22px;
+            gap: 10px;
+        }
+
+        @include responsive(xs) {
+            padding: 10px 40px;
+        }
+
+        @include responsive(xxs) {
+            padding: 10px 25px;
+        }
+    }
+
+    &__imgbox {
+        @include flex(space-between, center, row);
+        width: 100%;
+        height: 620px;
+        flex: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include responsive(lg) {
+            height: 530px;
+        }
+
+        @include responsive(md) {
+            width: 700px;
+        }
+
+        @include responsive(sm) {
+            width: 100%;
+        }
+
+        @include responsive(xs) {
+            width: 500px;
+        }
+
+        @include responsive(xxs) {
+            width: 160%;
+        }
+    }
+}

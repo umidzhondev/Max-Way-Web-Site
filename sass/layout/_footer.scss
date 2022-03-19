@@ -1,0 +1,193 @@
+// *  Footer
+.footer {
+    width: 100%;
+    padding-top: 125px;
+
+    @include responsive(sm) {
+        padding-top: 85px;
+    }
+
+    @include responsive(xs) {
+        padding-top: 50px;
+    }
+
+    &__content {
+        width: 100%;
+        @include flex(center, center, column);
+    }
+
+    &__main {
+        width: 100%;
+        @include flex(space-between, center, row);
+        padding-bottom: 40px;
+        border-bottom: 1px solid $color-gray-line-20;
+
+        @include responsive(sm) {
+            flex-direction: column;
+        }
+    }
+
+    &__left {
+        @include flex(space-between, flex-start, row);
+        flex: 1;
+
+        @include responsive(md) {
+            flex: 2;
+        }
+
+        @include responsive(sm) {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        @include responsive(xs) {
+            flex-direction: column
+        }
+
+        @include responsive(xxs) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__item {
+        @include flex(space-between, flex-start, column);
+        flex: 1;
+
+        @include responsive(xs) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__logo {
+        @include flex(space-between, flex-start, column);
+        flex: .5;
+
+        @include responsive(xs) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 18px;
+        color: #003846;
+        margin-bottom: 24px;
+        font-weight: 600;
+
+        @include responsive(xs) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__link {
+        font-size: 14px;
+        line-height: 34px;
+        color: $color-black;
+    }
+
+    &__right {
+        @include flex(flex-end, flex-start, row);
+        flex: 1;
+
+        &-item {
+            width: 50%;
+
+            @include responsive(lg) {
+                width: 60%;
+            }
+
+            @include responsive(md) {
+                width: 100%;
+            }
+
+            @include responsive(sm) {
+                width: 50%;
+            }
+
+            @include responsive(xs) {
+                width: 80%;
+            }
+
+            @include responsive(xxs) {
+                width: 100%;
+            }
+        }
+
+        @include responsive(md) {
+            flex: 1.5;
+        }
+
+        @include responsive(sm) {
+            width: 100%;
+            justify-content: flex-start;
+        }
+
+        &-title {
+            font-size: 20px;
+            line-height: 18px;
+            color: $color-black;
+            margin-bottom: 33px;
+            font-weight: 600;
+
+            @include responsive(xs) {
+                margin-bottom: 23px;
+            }
+        }
+    }
+
+    &__phone-number {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 33px;
+        color: $color-black;
+    }
+
+    &__description {
+        padding-top: 13px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        opacity: .7;
+    }
+
+    &__bottom {
+        width: 100%;
+        @include flex(space-between, center, row);
+        padding: 27px 24px;
+
+        @include responsive(xs) {
+            padding: 27px 0;
+        }
+    }
+
+    &__author {
+        font-size: 14px;
+        line-height: 24px;
+        color: $color-black;
+        opacity: .7;
+    }
+
+    &__social-icons {
+        @include flex(flex-start, center, row);
+        gap: 26px;
+        margin-right: 52px;
+
+        @include responsive(sm) {
+            margin-right: 0;
+        }
+
+        @include responsive(xs) {
+            gap: 15px;
+        }
+    }
+
+    &__social-icon {
+        i {
+            font-size: 20px;
+            color: $color-black;
+        }
+    }
+
+}
