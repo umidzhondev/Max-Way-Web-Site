@@ -12,6 +12,11 @@
         width: 100%;
         @include flex(space-between, center, row);
 
+        @include responsive(md){
+            position: relative;
+            z-index: 30;
+        }
+
         &__main {
             @include flex(space-between, center, row);
 

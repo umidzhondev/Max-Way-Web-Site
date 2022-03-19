@@ -968,6 +968,13 @@ a {
           flex-direction: row;
 }
 
+@media screen and (max-width: 992px) {
+  .header .navbar {
+    position: relative;
+    z-index: 30;
+  }
+}
+
 .header .navbar__main {
   display: -webkit-box;
   display: -ms-flexbox;
