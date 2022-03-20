@@ -317,6 +317,7 @@
 
         @include responsive(xs) {
             width: 500px;
+            margin-right: 70px;
         }
 
         @include responsive(xxs) {

@@ -1844,6 +1844,7 @@ a {
 @media screen and (max-width: 576px) {
   .download__imgbox {
     width: 500px;
+    margin-right: 70px;
   }
 }
 
